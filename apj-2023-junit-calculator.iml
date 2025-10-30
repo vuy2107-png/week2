@@ -1,37 +1,94 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="JUnit5.8.1">
-        <CLASSES>
-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="JUnit4">
-        <CLASSES>
-          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-  </component>
-</module>
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SimpleCalculatorTest {
+    @Test
+    @DisplayName("Testing add 0 + 0")
+    public void testAdd0And0() {
+        int first = 0;
+        int second = 0;
+        int expected = 0;
+
+        int result = SimpleCalculator.add(first, second);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Testing add 1 + 0")
+    public void testAdd1And0() {
+        int first = 1;
+        int second = 0;
+        int expected = 1;
+
+        int result = SimpleCalculator.add(first, second);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Testing add 0 + 1")
+    public void testAdd0And1() {
+        int first = 0;
+        int second = 1;
+        int expected = 1;
+
+        int result = SimpleCalculator.add(first, second);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Testing add 0 + 0")
+    public void testAdd5And3() {
+        int first = 5;
+        int second = 3;
+        int expected = 8;
+
+        int result = SimpleCalculator.add(first, second);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Testing sub 0 - 0")
+    public void testSub0and0() {
+        int first = 0;
+        int second = 0;
+        int expected = 0;
+
+        int result = SimpleCalculator.sub(first, second);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Testing sub 1 - 0")
+    public void testSub1and0() {
+        int first = 1;
+        int second = 0;
+        int expected = 1;
+
+        int result = SimpleCalculator.sub(first, second);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Testing sub 0 - 1")
+    public void testSub0and1() {
+        int first = 0;
+        int second = 1;
+        int expected = -1;
+
+        int result = SimpleCalculator.sub(first, second);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @DisplayName("Testing sub 0 - 0")
+    public void testSub5and3() {
+        int first = 5;
+        int second = 3;
+        int expected = 2;
+
+        int result = SimpleCalculator.sub(first, second);
+        assertEquals(expected, result);
+    }
+}
